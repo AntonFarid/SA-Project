@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Events</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="create-event.html">Create Event</a></li>
+        <li><a href="manage-events.html">Manage Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Manage Events</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Event Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="events-table-body">
+      <!-- Rows will be added dynamically here -->
+    </tbody>
+  </table>
+  </main>
+
+  <footer>
+    <p>© 2025 Event Registration System</p>
+  </footer>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tableBody = document.querySelector("tbody");
+  
+    fetch("http://localhost:8080/events")
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to fetch events");
+        return response.json();
+      })
+      .then(events => {
+        tableBody.innerHTML = ''; // Clear the dummy rows
+        events.forEach(event => {
+          const row = document.createElement("tr");
+  
+          row.innerHTML = `
+            <td>${event.title}</td>
+            <td>
+              <button onclick="cancelEvent(${event.id})">Cancel</button>
+              <button onclick="rescheduleEvent(${event.id})">Reschedule</button>
+            </td>
+          `;
+  
+          tableBody.appendChild(row);
+        });
+      })
+      .catch(error => {
+        console.error("Error loading events:", error);
+      });
+  });
+  
+  function cancelEvent(id) {
+    if (!confirm("Are you sure you want to cancel this event?")) return;
+  
+    fetch(`http://localhost:8080/events/${id}`, {
+      method: "DELETE"
+    })
+      .then(response => {
+        if (response.ok) {
+          alert("Event cancelled.");
+          location.reload(); // Reload to update the table
+        } else {
+          alert("Failed to cancel event.");
+        }
+      });
+  }
+  
+  function rescheduleEvent(id) {
+    const newDate = prompt("Enter new date (YYYY-MM-DD):");
+    if (!newDate) return;
+  
+    fetch(`http://localhost:8080/events/${id}/reschedule?newDate=${newDate}`, {
+      method: "PUT"
+    })
+      .then(response => {
+        if (response.ok) {
+          alert("Event rescheduled.");
+          location.reload();
+        } else {
+          alert("Failed to reschedule event.");
+        }
+      });
+  }  
+</script>

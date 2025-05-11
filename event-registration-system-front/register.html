@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="create-event.html">Create Event</a></li>
+          <li><a href="participants.html">Participants</a></li>
+          <li><a href="manage-events.html">Manage</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Register for Event</h1>
+      <form id="registration-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required><br><br>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" required><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" required><br><br>
+
+        <label for="eventId">Select Event:</label>
+        <select id="eventId" required>
+          <option value>-- Select an Event --</option>
+        </select><br><br>
+
+        <button type="submit" class="main-btn">Submit</button>
+      </form>
+
+      <p id="confirmation-message"
+        style="margin-top:20px; font-weight:bold;"></p>
+    </main>
+
+    <footer>
+      <p>© 2025 Event Registration System</p>
+    </footer>
+
+    <script>
+  // 1. Get eventId from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const preselectedEventId = urlParams.get("eventId");
+
+  // 2. Load events into dropdown
+  window.addEventListener('DOMContentLoaded', () => {
+    fetch('http://localhost:8080/events')
+      .then(response => response.json())
+      .then(events => {
+        const eventSelect = document.getElementById('eventId');
+
+        events.forEach(event => {
+          const option = document.createElement('option');
+          option.value = event.id;
+          option.textContent = event.title;
+
+          // Preselect event if it matches URL
+          if (preselectedEventId && preselectedEventId === event.id.toString()) {
+            option.selected = true;
+          }
+
+          eventSelect.appendChild(option);
+        });
+
+        // Optional: disable dropdown if eventId came from URL
+        if (preselectedEventId) {
+          eventSelect.disabled = true;
+        }
+      })
+      .catch(error => {
+        console.error('Error loading events:', error);
+        alert('Failed to load events. Please try again later.');
+      });
+  });
+
+  // 3. Handle form submission
+  document.getElementById('registration-form').addEventListener('submit', event => {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const eventId = document.getElementById('eventId').value;
+
+    const participantData = {
+      name,
+      email,
+      phone,
+      eventId: parseInt(eventId)
+    };
+
+    // Step 1: Add participant
+    fetch('http://localhost:8080/participants', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(participantData)
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Something went wrong while submitting the form.');
+        }
+        return res.json();
+      })
+      .then(participant => {
+        // Step 2: Register participant to event
+        return fetch(`http://localhost:8080/registrations?eventId=${eventId}&participantId=${participant.id}`, {
+          method: 'POST'
+        });
+      })
+      .then(registrationRes => {
+        if (!registrationRes.ok) {
+          throw new Error('Failed to register participant to the event.');
+        }
+
+        document.getElementById('confirmation-message').textContent = 'Successfully registered for the event!';
+        document.getElementById('registration-form').reset();
+      })
+      .catch(error => {
+        console.error('Error during registration:', error);
+        document.getElementById('confirmation-message').textContent = 'Failed to register. Please try again later.';
+      });
+  });
+</script>
+</body>
+</html>

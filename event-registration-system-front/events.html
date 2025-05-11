@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Events</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="event-registrations.html">Event Registrations</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Upcoming Events</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Date</th>
+          <th>Total Seats</th>
+          <th>Available Seats</th>
+          <th>Register</th>
+        </tr>
+      </thead>
+      <tbody id="eventTableBody">
+        <!-- Dynamic content here -->
+        
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>© 2025 Event Registration System</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("http://localhost:8080/events") 
+        .then(response => response.json())
+        .then(data => {
+          const tableBody = document.querySelector("tbody");
+          tableBody.innerHTML = "";
+          data.forEach(event => {
+            const row = `
+              <tr>
+                <td>${event.title}</td>
+                <td>${event.date}</td>
+                <td>${event.totalSeats}</td>
+                <td>${event.availableSeats}</td>
+                <td><a href="register.html?eventId=${event.id}" class="main-btn">Register</a></td>
+              </tr>`;
+            tableBody.innerHTML += row;
+          });
+        })
+        .catch(err => console.error("Error loading events:", err));
+    });
+  </script>
+
+</body>
+</html>

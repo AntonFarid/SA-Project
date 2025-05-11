@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participants</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Registered Participants</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Registered Event Title</th>
+          <th>Participant Name</th>
+          <th>Participant Email</th>
+        </tr>
+      </thead>
+      <tbody id="participantsTableBody">
+        <!-- Dynamic content will be inserted here -->
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>© 2025 Event Registration System</p>
+  </footer>
+
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    fetch('http://localhost:8080/participants/details')
+      .then(response => response.json())
+      .then(participants => {
+        const tableBody = document.getElementById('participantsTableBody');
+        tableBody.innerHTML = '';
+        
+        participants.forEach(participant => {
+          const row = `
+            <tr>
+              <td>${participant.eventTitle}</td>
+              <td>${participant.name}</td>
+              <td>${participant.email}</td>
+            </tr>`;
+          tableBody.innerHTML += row;
+        });
+      })
+      .catch(error => {
+        console.error('Error loading participants:', error);
+        alert('Failed to load participants. Please try again later.');
+      });
+  });
+</script>
+</body>
+</html>
