@@ -28,7 +28,7 @@ public class ParticipantService {
            String eventTitle = "UnKnown";
            try {
                EventDTO event = restTemplate.getForObject(
-                       "http://localhost:8080/events/" + p.getEventId(),
+                       "http://localhost:8081/events/" + p.getEventId(),
                        EventDTO.class
                );
                if (event != null) {

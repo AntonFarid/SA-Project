@@ -56,7 +56,7 @@
 
   // 2. Load events into dropdown
   window.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:8080/events')
+    fetch('http://localhost:8081/events')
       .then(response => response.json())
       .then(events => {
         const eventSelect = document.getElementById('eventId');
@@ -102,7 +102,7 @@
     };
 
     // Step 1: Add participant
-    fetch('http://localhost:8080/participants', {
+    fetch('http://localhost:8082/participants', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -117,7 +117,7 @@
       })
       .then(participant => {
         // Step 2: Register participant to event
-        return fetch(`http://localhost:8080/registrations?eventId=${eventId}&participantId=${participant.id}`, {
+        return fetch(`http://localhost:8083/registrations?eventId=${eventId}&participantId=${participant.id}`, {
           method: 'POST'
         });
       })

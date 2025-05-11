@@ -44,7 +44,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      fetch("http://localhost:8080/events") 
+      fetch("http://localhost:8081/events")
         .then(response => response.json())
         .then(data => {
           const tableBody = document.querySelector("tbody");

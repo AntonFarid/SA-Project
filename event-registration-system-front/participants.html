@@ -39,7 +39,7 @@
 
   <script>
   window.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:8080/participants/details')
+    fetch('http://localhost:8082/participants/details')
       .then(response => response.json())
       .then(participants => {
         const tableBody = document.getElementById('participantsTableBody');

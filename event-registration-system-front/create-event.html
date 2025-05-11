@@ -57,7 +57,7 @@
           totalSeats: parseInt(document.getElementById("totalSeats").value)
         };
     
-        fetch("http://localhost:8080/events", {
+        fetch("http://localhost:8081/events", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(event)

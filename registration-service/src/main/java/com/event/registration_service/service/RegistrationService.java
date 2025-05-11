@@ -21,7 +21,7 @@ public class RegistrationService {
     @Autowired
     private RestTemplate restTemplate;
 
-    private final String EVENT_SERVICE_URL = "http://localhost:8080/events/";
+    private final String EVENT_SERVICE_URL = "http://localhost:8081/events/";
 
     public Registration register(Long eventId, Long participantId) {
         ResponseEntity<EventDto> response =     restTemplate.getForEntity(EVENT_SERVICE_URL + eventId, EventDto.class);

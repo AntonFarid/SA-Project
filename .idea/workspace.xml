@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="eb77bd17-f6d4-4407-babd-51f81e3771ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-registration-system-front/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-service/src/main/java/com/event/event_service/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/participant-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/participant-service/src/main/java/com/event/participant_service/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/registration-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/registration-service/src/main/java/com/event/registration_service/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SE2-Project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/event/api_gateway/ApiGatewayApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/event/api_gateway/config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/test/java/com/event/api_gateway/ApiGatewayApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/src/main/java/com/event/discovery_server/DiscoveryServerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/src/test/java/com/event/discovery_server/DiscoveryServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-registration-system-front/create-event.html" beforeDir="false" afterPath="$PROJECT_DIR$/event-registration-system-front/create-event.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-registration-system-front/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/event-registration-system-front/events.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-registration-system-front/manage-events.html" beforeDir="false" afterPath="$PROJECT_DIR$/event-registration-system-front/manage-events.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-registration-system-front/participants.html" beforeDir="false" afterPath="$PROJECT_DIR$/event-registration-system-front/participants.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-registration-system-front/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/event-registration-system-front/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/participant-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/participant-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/participant-service/src/main/java/com/event/participant_service/service/ParticipantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/participant-service/src/main/java/com/event/participant_service/service/ParticipantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/participant-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/participant-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/participant-service/src/test/java/com/event/participant_service/ParticipantServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/registration-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration-service/src/main/java/com/event/registration_service/service/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/registration-service/src/main/java/com/event/registration_service/service/RegistrationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/registration-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration-service/src/test/java/com/event/registration_service/RegistrationServiceApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2wStwe3Nz4Ky4vvop9ssGbxNpHA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/SA-Project/event-registration-system-front",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SA-Project\registration-service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\SA-Project\kafka-docker" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SE2-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SE2-Project" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eb77bd17-f6d4-4407-babd-51f81e3771ee" name="Changes" comment="" />
+      <created>1746047042596</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746047042596</updated>
+    </task>
+    <task id="LOCAL-00001" summary="backend">
+      <option name="closed" value="true" />
+      <created>1746047168659</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746047168659</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend" />
+  </component>
+</project>
