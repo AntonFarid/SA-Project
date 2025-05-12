@@ -1,17 +1,18 @@
 package com.event.registration_service.config;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000") // حدد الـ frontend
-                .allowedMethods("GET", "POST", "PUT", "DELETE") // السماح بالـ methods المطلوبة
-                .allowedHeaders("*");
+                .allowedOrigins("http://localhost:3000") // front url
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true)
+                .maxAge(3600);
     }
 }
-
