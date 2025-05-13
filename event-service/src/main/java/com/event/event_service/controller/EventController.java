@@ -1,6 +1,7 @@
 package com.event.event_service.controller;
 
 import com.event.event_service.Repository.EventRepository;
+import com.event.event_service.service.kafka.KafkaProducerService;
 import com.event.event_service.model.Event;
 import com.event.event_service.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -19,11 +22,21 @@ public class EventController {
     private EventService eventService;
     @Autowired
     private EventRepository eventRepository;
+    @Autowired
+    private KafkaProducerService kafkaProducer;
 
     @PostMapping
-    public Event createEvent (@RequestBody Event event){
-        return eventService.createEvent(event);
+    public ResponseEntity<Map<String, String>> createEvent(@RequestBody Event event){
+        Event saveEvent = eventService.createEvent(event);
+
+        kafkaProducer.sendEventCreatedMessage(saveEvent.getTitle());
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Event created and kafka message sent");
+
+        return ResponseEntity.ok(response);
     }
+
 
     @GetMapping
     public List<Event> getAllEvents() {

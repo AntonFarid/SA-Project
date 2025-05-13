@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb77bd17-f6d4-4407-babd-51f81e3771ee" name="Changes" comment="" />
+    <list default="true" id="eb77bd17-f6d4-4407-babd-51f81e3771ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/event-service/src/main/java/com/event/event_service/service/kafka/KafkaProducerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/participant-service/src/main/java/com/event/participant_service/service/kafka/KafkaConsumerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-service/src/main/java/com/event/event_service/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/java/com/event/event_service/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/participant-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/participant-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/participant-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/participant-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/registration-service/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
