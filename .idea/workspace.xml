@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb77bd17-f6d4-4407-babd-51f81e3771ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event-service/src/main/java/com/event/event_service/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/java/com/event/event_service/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/participant-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/participant-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/participant-service/src/main/java/com/event/participant_service/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/participant-service/src/main/java/com/event/participant_service/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/participant-service/src/main/java/com/event/participant_service/service/ParticipantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/participant-service/src/main/java/com/event/participant_service/service/ParticipantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration-service/src/main/java/com/event/registration_service/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/registration-service/src/main/java/com/event/registration_service/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration-service/src/main/java/com/event/registration_service/service/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/registration-service/src/main/java/com/event/registration_service/service/RegistrationService.java" afterDir="false" />
-    </list>
+    <list default="true" id="eb77bd17-f6d4-4407-babd-51f81e3771ee" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
